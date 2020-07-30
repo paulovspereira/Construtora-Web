@@ -1,0 +1,101 @@
+<style>
+	body.is-preload *,
+	body.is-preload *:before,
+	body.is-preload *:after {
+		-moz-animation: none !important;
+		-webkit-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+		-moz-transition: none !important;
+		-webkit-transition: none !important;
+		-ms-transition: none !important;
+		transition: none !important;
+	}
+
+	#page-wrapper {
+		-moz-backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-moz-transition: -moz-transform 0.5s ease;
+		-webkit-transition: -webkit-transform 0.5s ease;
+		-ms-transition: -ms-transform 0.5s ease;
+		transition: transform 0.5s ease;
+		padding-bottom: 1px;
+		padding-top: 44px;
+	}
+
+	#header {
+		text-align: center;
+		padding: 2em 0 0 0;
+		background-color: #3F51B5;
+		background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
+		background-position: top left, top left, top left;
+		background-size: 100% 6em, 100% 6em, auto;
+		background-repeat: no-repeat, no-repeat, repeat;
+	}
+
+	#header h1 {
+		padding: 0 0 1em 0;
+		margin: 0;
+		color: honeydew;
+	}
+
+	#footer {
+		background-color: #3F51B5;
+		background-position: top left, top left, top left;
+		background-size: 100% 6em, 100% 6em, auto;
+		text-align: center;
+	}
+
+
+	#footer .container {
+		margin-bottom: 4em;
+	}
+
+	#footer .copyright {
+		padding: 1em 0 1em 0;
+		color: honeydew;
+		margin-top: -0.5em;
+		text-align: center;
+		font-size: 0.9em;
+	}
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		align-items: stretch;
+	}
+
+	img.imgleft {
+		margin-right: 8px;
+	}
+</style>
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Constutora</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<div id="header">
+		<h1>Smart Staff</h1>
+	</div>
+	<ap-imob *ngFor="let imobiliaria of imobiliarias" [nome]="imobiliaria.nome" [foto]="imobiliaria.foto"
+		[email]="imobiliaria.email" [idade]="imobiliaria.idade" [companhia]="imobiliaria.companhia" [bugtet]= "imobiliaria.bugtet">
+	</ap-imob>
+	<div id="footer">
+		<div class="copyright">
+			<h2>Todos os direitos reservados ------------------------- Design: Paulo Pereira</h2>
+		</div>
+	</div>
+</body>
+
+</html>
